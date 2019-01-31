@@ -1,0 +1,79 @@
+<div>
+    <div class="scroll-container opacity-92" id="message_${id}"
+         style="resize: none;width:400px;height:300px;overflow:scroll; padding:20px;">
+        <code ng-repeat="message in clients[${id}].messageList track by $index">
+            {{ message }}
+            <br>
+        </code>
+    </div>
+
+    <div class="input-group" style="margin:5px auto;">
+        <input type="text" class="form-control" placeholder="what are you say ?" ng-model="clients[${id}].playerSpeakInput">
+        <span class="input-group-btn">
+        <button class="btn btn-success" type="button" ng-click="playerSpeak(${id})">发言</button>
+    </span>
+    </div>
+
+    <div>
+        <div class="input-group" style="margin:5px auto;width:48%;float:left;">
+            <input type="text" class="form-control" ng-model="clients[${id}].playerVoteInput">
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="playerVote(${id})">投票</button>
+        </span>
+        </div>
+        <div class="input-group" style="margin:5px auto;width:48%;float:right;">
+            <input type="text" class="form-control" ng-model="clients[${id}].wolfChoiceInput">
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="wolfChoice(${id})">狼人杀人</button>
+        </span>
+        </div>
+    </div>
+
+    <div>
+        <div class="input-group" style="margin:5px auto;width:48%;float:left;">
+            <input type="text" class="form-control" ng-model="clients[${id}].witchHelpInput">
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="witchHelp(${id})">女巫救人</button>
+        </span>
+        </div>
+        <div class="input-group" style="margin:5px auto;width:48%;float:right;">
+            <input type="text" class="form-control" ng-model="clients[${id}].witchKillInput">
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="witchKill(${id})">女巫毒杀</button>
+        </span>
+        </div>
+    </div>
+
+    <div>
+        <div class="input-group" style="margin:5px auto;width:48%;float:left;">
+            <input type="text" class="form-control"  ng-model="clients[${id}].seerChoiceInput">
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="seerChoice(${id})">预言家查看</button>
+        </span>
+        </div>
+        <div class="input-group" style="margin:5px auto;width:48%;float:right;">
+            <input type="text" class="form-control" ng-model="clients[${id}].hunterChoiceInput">
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="hunterChoice(${id})">猎人杀人</button>
+        </span>
+        </div>
+    </div>
+
+    <div>
+        <div class="input-group" style="margin:5px auto;width:100%;float:left;">
+        <span class="input-group-btn">
+            <button class="btn btn-info" type="button" ng-click="readyPlayer(${id})">准备</button>
+        </span>
+        <span class="input-group-btn">
+            <button class="btn btn-info" type="button" ng-click="callPlayer(${id})">发起游戏</button>
+        </span>
+            <span class="input-group-btn">
+            <button class="btn btn-success" type="button" ng-click="joinGame(${id})">参加游戏</button>
+        </span>
+            <span class="input-group-btn">
+            <button class="btn btn-warning" type="button" ng-click="leaveGame(${id})">退出游戏</button>
+        </span>
+        </div>
+    </div>
+
+</div>
